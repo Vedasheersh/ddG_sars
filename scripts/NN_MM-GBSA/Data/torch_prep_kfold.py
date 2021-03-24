@@ -10,14 +10,11 @@ import sys, os, copy, math, re, shutil, glob, itertools
 import subprocess as sub, numpy as np, pandas as pd, matplotlib.pyplot as plt
 from pathlib import Path
 
-sys.path.append(os.getenv('HOME') + '/python')
-import cpy, cpy_reaxff
-
 myself = 'torch_prep_kfold.py'
 if len(sys.argv) == 1 or sys.argv[1] == '-h':
-  print('[Usage]: %s scramble_frac scramble_col fn_dat1 size_dat1 [fn_dat2 size_dat2] ...' % (myself))
+  print('[Usage]: %s scramble_frac scramble_col navg fn_dat1 size_dat1 [fn_dat2 size_dat2] ...' % (myself))
   print('[Example]: ./%s 0.0 0 3 ../Mater/cout.rose.csv' % (myself))
-  print('[Example]: ./%s 0.0 0 240 ../Mater/cout.gbsa.csv' % (myself))
+  print('[Example]: ./%s 0.0 0 240 ../Mater/rawdat_1.csv ../Mater/rawdat_2.csv ../Mater/rawdat_3.csv ../Mater/rawdat_4.csv' % (myself))
   exit()
 
 # Parse args
