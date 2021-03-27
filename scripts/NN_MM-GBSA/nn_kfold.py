@@ -7,6 +7,13 @@ from matplotlib import pyplot as plt
 from sklearn.metrics import matthews_corrcoef
 from sklearn.metrics import r2_score
 
+myself = 'nn_kfold.py'
+if len(sys.argv) == 1 or sys.argv[1] == '-h':
+  print('[Usage]: ./%s mode' % (myself))
+  print('[Example]: ./%s 1' % (myself)) # Train model using 5-fold cross-validation
+  print('[Example]: ./%s 2' % (myself)) # Predict on circulating variants (remember to train with all data before make predictions, comment line #360 and uncomment line#362)
+  exit()
+
 # Global variables.
 device = "cpu" # ["cpu", "gpu"]
 model_type = "reg" # ["reg", "class"]

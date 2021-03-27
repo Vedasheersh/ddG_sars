@@ -13,8 +13,8 @@ from pathlib import Path
 myself = 'torch_prep_kfold.py'
 if len(sys.argv) == 1 or sys.argv[1] == '-h':
   print('[Usage]: %s scramble_frac scramble_col navg fn_dat1 size_dat1 [fn_dat2 size_dat2] ...' % (myself))
-  print('[Example]: ./%s 0.0 0 3 ../Mater/cout.rose.csv' % (myself))
-  print('[Example]: ./%s 0.0 0 240 ../Mater/rawdat_1.csv ../Mater/rawdat_2.csv ../Mater/rawdat_3.csv ../Mater/rawdat_4.csv' % (myself))
+  print('[Example]: ./%s 0.0 0 6 ../Mater/rawdat_rose_1.csv ../Mater/rawdat_rose_2.csv' % (myself))
+  print('[Example]: ./%s 0.0 0 240 ../Mater/rawdat_gbsa_1.csv ../Mater/rawdat_gbsa_2.csv ../Mater/rawdat_gbsa_3.csv ../Mater/rawdat_gbsa_4.csv' % (myself))
   exit()
 
 # Parse args
@@ -27,7 +27,7 @@ kfold = 5
 nshuffle = 1
 ratio_data = 1.00 # Use this fraction of data for each mutant
 model_type = "reg" # ["class", "reg"]
-model_obj = "gbsa" # ["gbsa", "rose"]
+model_obj = "rose" # ["gbsa", "rose"]
 data_scale = "nonlog" # ["log", "nonlog"]
 prfx = model_obj + "_" + model_type
 sufx = ".csv" 
